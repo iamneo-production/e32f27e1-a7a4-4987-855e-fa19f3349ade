@@ -1,0 +1,107 @@
+<h2 class="font-dongle text-6xl text-center font-semibold mb-4">Register</h2>
+<div class="flex items-center justify-center p-3">
+  <form class="space-y-3">
+    <div>
+      <button
+        type="button"
+        class="w-80 border inline-flex border-blue-200 rounded-xl p-2 text-gray-400 text-left"
+        id="userType"
+        aria-expanded="true"
+        aria-haspopup="true"
+        (click)="typeToggler(userRole)"
+      >
+        {{ userRole }}
+        <svg
+          class="ml-32 mt-1 h-5 w-5"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      *ngIf="show"
+      class="w-80 border absolute border-blue-200 rounded-xl bg-white shadow-xl"
+      role="menu"
+      aria-orientation="vertical"
+      aria-labelledby="menu-button"
+      tabindex="-1"
+    >
+      <div class="py-1">
+        <a
+          (click)="typeToggler('Admin')"
+          class="text-gray-700 no-underline block px-4 py-2 text-sm hover:bg-cyan-200 ease-in"
+          role="menuitem"
+          tabindex="-1"
+          id="menu-item-0"
+          >Admin</a
+        >
+        <a
+          (click)="typeToggler('User')"
+          class="text-gray-700 no-underline block px-4 py-2 text-sm hover:bg-cyan-200 ease-in"
+          role="menuitem"
+          tabindex="-1"
+          id="menu-item-1"
+          >User</a
+        >
+      </div>
+    </div>
+    <div>
+      <input
+        class="w-80 border border-blue-200 rounded-xl p-2"
+        type="text"
+        id="username"
+        placeholder="Enter Username..."
+      />
+    </div>
+    <div>
+      <input
+        class="w-80 border border-blue-200 rounded-xl p-2"
+        type="email"
+        id="email"
+        placeholder="Enter Email..."
+      />
+    </div>
+    <div>
+      <input
+        class="w-80 border border-blue-200 rounded-xl p-2"
+        type="tel"
+        id="phno"
+        placeholder="Enter Phone Number..."
+      />
+    </div>
+    <div>
+      <input
+        class="w-80 border border-blue-200 rounded-xl p-2"
+        type="password"
+        id="password"
+        placeholder="Enter Password..."
+      />
+    </div>
+    <div>
+      <input
+        class="w-80 border border-blue-200 rounded-xl p-2"
+        type="password"
+        id="password"
+        placeholder="Confirm Password..."
+      />
+    </div>
+    <div class="flex items-center justify-center">
+      <button
+        class="animate-bounce bg-blue-300 border-2 mt-5 border-blue-200 hover:bg-green-200 hover:border-green-100 transition duration-[3s] px-3 py-2 rounded-2xl font-medium"
+      >
+        Sign Up
+      </button>
+    </div>
+    <p class="text-cyan-400 font-dongle text-center text-2xl">
+      Already an User?<span class="text-green-400 cursor-pointer">Login</span>
+    </p>
+  </form>
+</div>
