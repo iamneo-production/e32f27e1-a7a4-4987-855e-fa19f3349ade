@@ -6,12 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-  show:boolean = false
-  userRole:string='Select Customer Type'
-  constructor() { }
+  userRole = 'Select Customer Type';
+  show = false;
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
   typeToggler(r: string) {
     this.show = !this.show;
     this.userRole = r;
