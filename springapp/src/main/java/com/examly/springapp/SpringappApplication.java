@@ -9,6 +9,7 @@ public class SpringappApplication implements CommandLineRunner{
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringappApplication.class, args);
+		System.out.println("Starting code");
 	}
 	@Override
 	public void run(String... args) throws Exception {
