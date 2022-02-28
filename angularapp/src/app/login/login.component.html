@@ -1,1 +1,24 @@
-<p>login works!</p>
+<div class="LoginMain">
+    <div class="LoginLeft">
+        <div id="slideshow"></div>
+    </div>
+    <div class="LoginRight">
+         <form class="LoginCard">
+             <p class="LoginTitle">Login</p>
+             {{loginData|json}}
+             <input 
+             [(ngModel)]="loginData.email"
+             name="email"
+             type="email" class="LoginInput1" placeholder="Email"/>
+             <span *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched" class="LoginInputError">
+                 Please enter a valid email
+            </span>
+             <input 
+             [(ngModel)]="loginData.password"
+             name="password"
+             type="password" class="LoginInput2" placeholder="Password"/>
+             <button type="submit" class="LoginBtn" (click)="onLogin($event)">SignIn</button>
+             <p class="LoginLink">New User/Admin? <a routerLink="/signup" class="LoginSignUp">Click Here to SignUp</a></p>
+         </form>
+    </div>
+</div>

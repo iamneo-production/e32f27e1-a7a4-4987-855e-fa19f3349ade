@@ -5,6 +5,7 @@ import com.examly.springapp.repo.UserRepository;
 import com.examly.springapp.models.UserModel;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService{
@@ -14,19 +15,21 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public UserModel addUser(UserModel user) throws Exception {
-        UserModel local=this.userRepository.findByEmail(user.getEmail());
-        if(local!=null){
+        Optional<UserModel> local=this.userRepository.findByEmail(user.getEmail());
+        if(local.isPresent()){
             System.out.println("User is already there");
             throw new Exception("User already Present");
-        }else{
-            local=this.userRepository.save(user);
         }
-        return local;
+        return this.userRepository.save(user);
     }
 
     @Override
     public UserModel getUser(String email) {
-        return this.userRepository.findByEmail(email);
+        Optional<UserModel> local=this.userRepository.findByEmail(email);
+        if(local.isPresent()){
+            return local.get();
+        }
+        return null;
     }
 
     @Override
