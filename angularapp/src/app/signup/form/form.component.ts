@@ -41,19 +41,22 @@ export class FormComponent implements OnInit {
       });
       return;
     }
-    else if(this.model.mobileNumber=='' || this.model.mobileNumber==null){
+    if(this.model.mobileNumber=='' || this.model.mobileNumber==null){
       this.snack.open("Phone No is required !",'',{
         duration:3000,
         panelClass: 'custom-css-class'
       });
       return;
-    }else if(this.model.mobileNumber.length!=10 ){
+    }
+    else if(!(this.model.mobileNumber.toString().length==10)){
+      console.log(this.model.mobileNumber.toString().length);
       this.snack.open("Mobile No should be of 10 Digits !",'',{
         duration:3000,
         panelClass: 'custom-css-class'
       });
       return;
-    }else if(!(this.model.mobileNumber.startsWith('9') || this.model.mobileNumber.startsWith('8') || this.model.mobileNumber.startsWith('7') || this.model.mobileNumber.startsWith('6') || this.model.mobileNumber.startsWith('0'))){
+    }
+    if(!(this.model.mobileNumber.toString().startsWith('9') || this.model.mobileNumber.toString().startsWith('8') || this.model.mobileNumber.toString().startsWith('7') || this.model.mobileNumber.toString().startsWith('6') || this.model.mobileNumber.toString().startsWith('0') )){
       this.snack.open("Mobile No should start with 9, 8 or 7 !",'',{
         duration:3000,
         panelClass: 'custom-css-class'
