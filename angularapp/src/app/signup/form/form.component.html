@@ -1,7 +1,8 @@
 <h2 class="font-dongle text-6xl text-center font-semibold mb-4">Register</h2>
 <div class="flex items-center justify-center p-3">
   <form class="space-y-3">
-    <div>
+    <!-- <div>
+      {{admin|json}}
       <button
         type="button"
         class="w-80 border inline-flex border-blue-200 rounded-xl p-2 text-gray-400 text-left"
@@ -36,6 +37,8 @@
     >
       <div class="py-1">
         <a
+        [(ngModel)]="admin.userRole"
+        name="userRole"
           (click)="typeToggler('Admin')"
           class="text-gray-700 no-underline block px-4 py-2 text-sm hover:bg-cyan-200 ease-in"
           role="menuitem"
@@ -44,6 +47,8 @@
           >Admin</a
         >
         <a
+        [(ngModel)]="user.userRole"
+        name="userRole"
           (click)="typeToggler('User')"
           class="text-gray-700 no-underline block px-4 py-2 text-sm hover:bg-cyan-200 ease-in"
           role="menuitem"
@@ -55,6 +60,8 @@
     </div>
     <div>
       <input
+      [(ngModel)]="user.username"
+      name="username"
         class="w-80 border border-blue-200 rounded-xl p-2"
         type="text"
         id="username"
@@ -68,40 +75,78 @@
         id="email"
         placeholder="Enter Email..."
       />
+    </div> -->
+    <div>
+      <select name="model.userRole" [(ngModel)] = "model.userRole" class="w-80 border inline-flex border-blue-200 rounded-xl p-2 text-gray-400 text-left">
+        <option [value]="1" class="text-gray-700 no-underline block px-4 py-2 text-sm hover:bg-cyan-200 ease-in">Select Role Type</option>
+        <option [value]="2" class="text-gray-700 no-underline block px-4 py-2 text-sm hover:bg-cyan-200 ease-in">Admin</option>
+        <option [value]="3" class="text-gray-700 no-underline block px-4 py-2 text-sm hover:bg-cyan-200 ease-in">User</option>
+      </select>
     </div>
     <div>
       <input
+      [(ngModel)]="model.email"
+      name="email"
         class="w-80 border border-blue-200 rounded-xl p-2"
-        type="tel"
+        type="email"
+        id="email"
+        placeholder="Enter Email..."
+        required
+      />
+      </div>
+      <div *ngIf="model.userRole!='2' && '3'" >
+        <input
+        [(ngModel)]="username"
+        name="username"
+          class="w-80 border border-blue-200 rounded-xl p-2"
+          type="text"
+          id="username"
+          placeholder="Enter Username..."
+        />
+      </div>
+    <div>
+      <input
+      [(ngModel)]="model.mobileNumber"
+      name="mobileNumber"
+        class="w-80 border border-blue-200 rounded-xl p-2"
+        type="number"
         id="phno"
         placeholder="Enter Phone Number..."
+        required
       />
     </div>
     <div>
       <input
+      [(ngModel)]="model.password"
+      name="password"
         class="w-80 border border-blue-200 rounded-xl p-2"
         type="password"
         id="password"
         placeholder="Enter Password..."
+        required
       />
     </div>
     <div>
       <input
+      [(ngModel)]="confirmPassword"
+      name="confirmPassword"
         class="w-80 border border-blue-200 rounded-xl p-2"
         type="password"
         id="password"
         placeholder="Confirm Password..."
+        required
       />
     </div>
     <div class="flex items-center justify-center">
       <button
         class="animate-bounce bg-blue-300 border-2 mt-5 border-blue-200 hover:bg-green-200 hover:border-green-100 transition duration-[3s] px-3 py-2 rounded-2xl font-medium"
+        (click)="onSubmit($event)"
       >
         Sign Up
       </button>
     </div>
     <p class="text-cyan-400 font-dongle text-center text-2xl">
-      Already an User?<span class="text-green-400 cursor-pointer">Login</span>
+      Already an User?<span class="text-green-400 cursor-pointer"><a routerLink="/">Login</a></span>
     </p>
   </form>
 </div>
