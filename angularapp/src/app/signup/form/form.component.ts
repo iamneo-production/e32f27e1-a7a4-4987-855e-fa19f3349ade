@@ -2,6 +2,7 @@ import { Component, OnInit,ViewEncapsulation } from '@angular/core';
 import Swal from 'sweetalert2';
 import { MatSnackBar} from '@angular/material/snack-bar';
 import { SignupService } from 'src/app/services/signup.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -12,7 +13,7 @@ import { SignupService } from 'src/app/services/signup.service';
 export class FormComponent implements OnInit {
   // userRole = 'Select Customer Type';
   // show = false;
-  constructor(private signupService:SignupService,private snack:MatSnackBar) {}
+  constructor(private signupService:SignupService,private snack:MatSnackBar,private router:Router) {}
 
   model = {
     userRole: "1",
@@ -92,6 +93,7 @@ export class FormComponent implements OnInit {
         (data)=>{
           console.log(data);
           Swal.fire('Success','Admin "'+this.model.email+'" is successfully registered','success');
+          this.router.navigate([''])
         },
         (error)=>{
           console.log(error);
@@ -107,6 +109,7 @@ export class FormComponent implements OnInit {
         (data)=>{
           console.log(data);
           Swal.fire('Success','User "'+this.model.email+'" is successfully registered','success');
+          this.router.navigate([''])
         },
         (error)=>{
           console.log(error);
