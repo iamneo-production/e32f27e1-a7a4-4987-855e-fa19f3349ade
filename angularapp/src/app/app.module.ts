@@ -3,17 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-<<<<<<< HEAD
 
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-=======
-import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { FormComponent } from './signup/form/form.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -40,7 +30,6 @@ import { UserComponent } from './dashboard/user/user.component';
     HttpClientModule,
     FormsModule,
     MatSnackBarModule
->>>>>>> a63fc28e3dc73d128d596d3df70f6f3c141459de
   ],
   providers: [],
   bootstrap: [AppComponent]

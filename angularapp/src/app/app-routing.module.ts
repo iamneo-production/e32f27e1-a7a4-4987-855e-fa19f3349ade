@@ -1,9 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-<<<<<<< HEAD
-
-const routes: Routes = [];
-=======
 import { AdminComponent } from './dashboard/admin/admin.component';
 import { UserComponent } from './dashboard/user/user.component';
 import { LoginComponent } from './login/login.component';
@@ -32,7 +28,6 @@ const routes: Routes = [
   },
 
 ];
->>>>>>> a63fc28e3dc73d128d596d3df70f6f3c141459de
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
