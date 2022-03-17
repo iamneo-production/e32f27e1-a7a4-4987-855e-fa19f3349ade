@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { FormComponent } from './signup/form/form.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,6 +12,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './dashboard/admin/admin.component';
 import { UserComponent } from './dashboard/user/user.component';
+import { ConfirmEqualValidatorDirective } from './shared/confirm-equal-validator.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,8 @@ import { UserComponent } from './dashboard/user/user.component';
     FormComponent,
     LoginComponent,
     AdminComponent,
-    UserComponent
+    UserComponent,
+    ConfirmEqualValidatorDirective
   ],
   imports: [
     BrowserModule,

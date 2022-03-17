@@ -1,7 +1,8 @@
 package com.examly.springapp.controller;
+import com.examly.springapp.exceptions.UserException;
 import com.examly.springapp.models.*;
 import com.examly.springapp.service.UserService;
-
+import java.util.List;
 import com.examly.springapp.service.impl.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -16,33 +17,37 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 @RestController
+@CrossOrigin(origins="*")
 @RequestMapping("/user")
-@CrossOrigin("*")
 public class UserController {
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private UserServiceImpl userServiceImpl;
-
     @PostMapping("/signup")
-    public UserModel addUser(@RequestBody UserModel data)throws Exception{
+    public UserModel addUser(@RequestBody UserModel data){
+    	UserModel user = userService.getUserByEmail(data.getEmail());
+    	if(user!=null) {
+    		throw new UserException("User already Present");
+    	}
         return this.userService.addUser(data);
     }
-
+    @GetMapping("/all")
+    public List<?> getUsers(){
+        return this.userService.getAllUsers();
+    }
     @GetMapping("/{email}")
-    public UserModel getUser(@PathVariable("email") String UserID){
-        return this.userService.getUser(UserID);
+    public UserModel getUser(@PathVariable("email") String email){
+        return this.userService.getUserByEmail(email);
     }
     
     @DeleteMapping("/{email}")
-    public void deleteUser(@PathVariable("email") String UserID){
-        this.userService.deleteUser(UserID);
+    public void deleteUser(@PathVariable("email") String email){
+        this.userService.deleteUser(email);
     }
 
     @PostMapping("/login")
     public ResponseEntity<String> checkLogin(@RequestBody LoginModel loginModel) {
-        UserModel  user = userServiceImpl.getUser(loginModel.getEmail());
+        UserModel  user = userService.getUserByEmail(loginModel.getEmail());
         if(user == null) {
             return new ResponseEntity<String>("User not found", HttpStatus.NOT_FOUND);
         }

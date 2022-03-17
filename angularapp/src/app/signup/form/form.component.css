@@ -1,3 +1,3 @@
-.custom-css-class {
-    background-color: brown;
-  }
+input.ng-touched.ng-invalid{
+  border: solid 1px red;
+}

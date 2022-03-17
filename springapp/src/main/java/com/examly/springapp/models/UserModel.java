@@ -6,17 +6,18 @@ public class UserModel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Column(name = "email",nullable = false)
     private String email;
+    @Column(name = "password",nullable = false)
     private String password;
+    @Column(name = "username",nullable = false)
     private String username;
+    @Column(name = "mobile_number",nullable = false)
     private String mobileNumber;
+    @Column(name = "role",nullable = false)
     private String userRole;
-
-    public UserModel() {
-    }
-
-    public UserModel(Long id, String email, String password, String username, String mobileNumber, String userRole) {
-        this.id = id;
+    public UserModel() {}
+    public UserModel(String email, String password, String username, String mobileNumber, String userRole) {
         this.email = email;
         this.password = password;
         this.username = username;
@@ -26,10 +27,6 @@ public class UserModel {
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getEmail() {

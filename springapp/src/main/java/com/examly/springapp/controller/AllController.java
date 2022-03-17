@@ -23,7 +23,7 @@ public class AllController {
 
     @PostMapping("/login")
     public ResponseEntity<String> checkLogin(@RequestBody LoginModel loginModel) {
-        UserModel  user = userService.getUser(loginModel.getEmail());
+        UserModel  user = userService.getUserByEmail(loginModel.getEmail());
         AdminModel admin = adminService.getAdmin(loginModel.getEmail());
         if(user == null && admin == null) {
             return new ResponseEntity<>("User not found", HttpStatus.NOT_FOUND);
