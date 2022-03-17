@@ -26,11 +26,7 @@ import { ConfirmEqualValidatorDirective } from './shared/confirm-equal-validator
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    NoopAnimationsModule,
-    HttpClientModule,
-    FormsModule,
-    MatSnackBarModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
