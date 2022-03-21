@@ -8,7 +8,7 @@ import { SignupComponent } from './signup/signup.component';
 import { FormComponent } from './signup/form/form.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './dashboard/admin/admin.component';
@@ -37,7 +37,8 @@ import { AdminAddAddonsComponent } from './admin-addons/admin-add-addons/admin-a
     NoopAnimationsModule,
     HttpClientModule,
     FormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
