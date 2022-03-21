@@ -1,4 +1,4 @@
-package com.babyshowerevent.BabyShowerEvent.model;
+package com.examly.springapp.models;
 
 import javax.persistence.*;
 import java.time.LocalDate;
