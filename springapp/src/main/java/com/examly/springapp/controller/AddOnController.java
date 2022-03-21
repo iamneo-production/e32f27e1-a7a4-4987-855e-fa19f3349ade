@@ -1,7 +1,7 @@
-package com.babyshowerevent.BabyShowerEvent.controller;
+package com.examly.springapp.controller;
 
-import com.babyshowerevent.BabyShowerEvent.model.AddOnModel;
-import com.babyshowerevent.BabyShowerEvent.service.AddOnService;
+import com.examly.springapp.models.AddOnModel;
+import com.examly.springapp.service.AddOnService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
