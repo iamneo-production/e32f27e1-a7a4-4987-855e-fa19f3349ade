@@ -13,6 +13,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './dashboard/admin/admin.component';
 import { UserComponent } from './dashboard/user/user.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { UserEventComponent } from './user-event/user-event.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { UserComponent } from './dashboard/user/user.component';
     FormComponent,
     LoginComponent,
     AdminComponent,
-    UserComponent
+    UserComponent,
+    HomePageComponent,
+    UserEventComponent
   ],
   imports: [
     BrowserModule,
