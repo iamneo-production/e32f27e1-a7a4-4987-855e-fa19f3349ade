@@ -1,0 +1,47 @@
+<nav class="navbar">
+    <div class="logo">
+        <img src="assets/Images/Logo.jpeg" alt="" />
+        <h1>Dew Drops</h1>
+    </div>
+    <div class="nav-center">
+        <a routerLink="/admin/themes" class="nav-item">Theme</a>
+
+        <a routerLink="/admin/foodmenu" class="nav-item">Food Menu</a>
+        <a routerLink="/admin/addons" class="nav-item" class="active">Add-ons</a>
+    </div>
+    <div class="nav-right">
+        <div class="profile"><img src="assets/Images/profilepicture.png" alt=""></div>
+        <div class="notification">5</div>
+    </div>
+</nav>
+
+
+
+
+<div class="book-event-main">
+   
+    <div class="card">
+        <form [formGroup]="addOnForm">
+            <div class="book-event-left">
+                <p style="font-size: 34px;bottom: 720px;position: absolute;"><b>ADD ADD-ONS</b></p>
+                <br>
+                <br>
+                <input type="text" placeholder="Enter the Add-ons" formControlName="name" [(ngModel)]="addOn.name" required />
+                <input type="text" placeholder="Enter Item Description" formControlName="description" [(ngModel)]="addOn.description" required />
+                <input type="text" placeholder="Enter Item Price" formControlName="addOnPrice" [(ngModel)]="addOn.addOnPrice" required />
+                <input type="text" placeholder="Enter Image URL" formControlName="imageUrl" [(ngModel)]="addOn.imageUrl" required />
+            </div>
+
+            <button class="add-add-ons" (click)="submit()">Add Add On</button>
+        </form>
+    </div>
+
+</div>
+
+
+<div class="footer-main">
+    <div class="footer-left">@All rights reserverd .inc</div>
+    <div class="footer-right">Contact Us: 7465837589</div>
+    <div class="footer-right">dewdrops@gmail.com</div>
+</div>
+
