@@ -1,6 +1,6 @@
-package com.babyshowerevent.BabyShowerEvent.service;
+package com.examly.springapp.service;
 
-import com.babyshowerevent.BabyShowerEvent.model.AddOnModel;
+import com.examly.springapp.models.AddOnModel;
 
 import java.util.List;
 

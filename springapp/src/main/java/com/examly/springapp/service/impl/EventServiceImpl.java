@@ -1,7 +1,7 @@
-package com.babyshowerevent.BabyShowerEvent.service;
+package com.examly.springapp.service.impl;
 
-import com.babyshowerevent.BabyShowerEvent.model.EventModel;
-import com.babyshowerevent.BabyShowerEvent.repository.EventRepository;
+import com.examly.springap.models.EventModel;
+import com.examly.springapp.repo.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,8 @@
-package com.babyshowerevent.BabyShowerEvent.service;
+package com.examly.springapp.service.impl;
 
-import com.babyshowerevent.BabyShowerEvent.model.AddOnModel;
-import com.babyshowerevent.BabyShowerEvent.repository.AddOnRepository;
+
+import com.examly.springapp.models.AddOnModel;
+import com.examly.springapp.repo.AddOnRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
-package com.babyshowerevent.BabyShowerEvent.service;
+package com.examly.springapp.service;
 
-import com.babyshowerevent.BabyShowerEvent.model.EventModel;
+import com.examly.springapp.models.EventModel;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
