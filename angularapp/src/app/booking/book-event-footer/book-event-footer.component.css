@@ -1,0 +1,15 @@
+.book-event-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #587291;
+    height: 50px;
+    margin-top: 20px;
+    padding: 5px;
+    color: white;
+  }
+  .footer-right {
+    display: flex;
+    flex-direction: column;
+  }
+  

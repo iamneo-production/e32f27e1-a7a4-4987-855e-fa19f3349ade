@@ -1,0 +1,43 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: #587291;
+    font-family: "Dongle", sans-serif;
+    font-size: 20px;
+  }
+  .logo-heading {
+    margin-left: 10px;
+  }
+  .navRight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    color: white;
+  }
+  .navLeft > a {
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: 100px;
+    color: white;
+    font-size: 25px;
+  }
+  .navLeft > a:last-child {
+    margin-right: 0;
+  }
+  .login-pic {
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  .content1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
