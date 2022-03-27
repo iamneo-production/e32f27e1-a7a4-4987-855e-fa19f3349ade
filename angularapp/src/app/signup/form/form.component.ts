@@ -57,7 +57,7 @@ export class FormComponent implements OnInit {
       return;
     }
     if(!(this.model.mobileNumber.toString().startsWith('9') || this.model.mobileNumber.toString().startsWith('8') || this.model.mobileNumber.toString().startsWith('7') || this.model.mobileNumber.toString().startsWith('6') || this.model.mobileNumber.toString().startsWith('0') )){
-      this.snack.open("Mobile No should start with 9, 8 or 7 !",'',{
+      this.snack.open("Mobile No should start with 9, 8, 7 or 6!",'',{
         duration:3000,
         panelClass: 'custom-css-class'
       });
@@ -95,7 +95,7 @@ export class FormComponent implements OnInit {
         },
         (error)=>{
           console.log(error);
-          this.snack.open('Something went wrong !!','',{
+          this.snack.open('User is already there !!','',{
             duration:3000,
             panelClass: 'custom-css-class'
           })

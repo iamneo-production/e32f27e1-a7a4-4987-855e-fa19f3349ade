@@ -12,12 +12,11 @@ public class UserServiceImpl implements UserService{
     
     @Autowired
     private UserRepository userRepository;
-
     @Override
     public UserModel addUser(UserModel user) throws Exception {
         Optional<UserModel> local=this.userRepository.findByEmail(user.getEmail());
         if(local.isPresent()){
-            System.out.println("User is already there");
+            System.out.print("User is ALready There!");
             throw new Exception("User already Present");
         }
         return this.userRepository.save(user);
