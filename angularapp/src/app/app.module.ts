@@ -17,6 +17,7 @@ import { HomePageComponent } from './dashboard/home-page/home-page.component';
 import { UserEventComponent } from './user-event/user-event.component';
 import { AdminAddonsComponent } from './admin-addons/admin-addons.component';
 import { AdminAddAddonsComponent } from './admin-addons/admin-add-addons/admin-add-addons.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AdminAddAddonsComponent } from './admin-addons/admin-add-addons/admin-a
     HomePageComponent,
     UserEventComponent,
     AdminAddonsComponent,
-    AdminAddAddonsComponent
+    AdminAddAddonsComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
