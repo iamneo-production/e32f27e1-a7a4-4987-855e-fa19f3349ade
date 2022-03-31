@@ -13,7 +13,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './dashboard/admin/admin.component';
 import { UserComponent } from './dashboard/user/user.component';
-import { HomePageComponent } from './home-page/home-page.component';
+import { HomePageComponent } from './dashboard/home-page/home-page.component';
 import { UserEventComponent } from './user-event/user-event.component';
 import { AdminAddonsComponent } from './admin-addons/admin-addons.component';
 import { AdminAddAddonsComponent } from './admin-addons/admin-add-addons/admin-add-addons.component';
