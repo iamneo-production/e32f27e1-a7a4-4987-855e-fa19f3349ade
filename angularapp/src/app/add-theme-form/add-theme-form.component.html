@@ -14,7 +14,7 @@
         <form #addForm="ngForm" (ngSubmit)="onAddTheme(addForm)">
         <div class="card"> 
             <div class="book-theme-left">
-                <input type="text" ngModel name="themeName" placeholder="Enter Theme Name" required/>
+                <input type="text" ngModel name="themeName" id="themeName" placeholder="Enter Theme Name" required/>
                 <input type="text" ngModel name="themeImageURL" placeholder="Enter the Image URL" required/>
                 <input type="text" ngModel name="themePhotographer" placeholder="Enter Photographer Details" required/>
                 <input type="text" ngModel name="themeVideographer" placeholder="Enter Videographer Details" required/>

@@ -17,6 +17,17 @@ export class AdminThemesComponent implements OnInit {
     this.getThemes();
   }
 
+  editTheme: Themes = {
+    themeId: 0,
+    themeName: "",
+    themeImageURL: "",
+    themePhotographer: "",
+    themeVideographer: "",
+    themeReturnGift: "",
+    themeCost: 0,
+    themeDescription: ""
+  }
+
   public getThemes(): void {
     this.adminThemesService.getThemes().subscribe(
       (response: Themes[]) => {
@@ -28,7 +39,6 @@ export class AdminThemesComponent implements OnInit {
     );
   }
 
-
   OnDeleteTheme(i: any) {
     this.adminThemesService.deleteTheme(i.themeId)
       .subscribe(res => {
@@ -38,30 +48,35 @@ export class AdminThemesComponent implements OnInit {
       });
   }
 
-
-  displayStyle = "none";
-  openPopup(Addon: any) {
-    this.displayStyle = "block";
-    this.themesUpdate = Addon;
+  public onupdateTheme(i: Themes): void {
+    var t = document.getElementById("hide") as HTMLElement;
+    t.style.display = "none";
+    var con = document.getElementById("main-container") as HTMLElement;
+    con.style.opacity = "1";
+    this.adminThemesService.updateTheme(i).subscribe(
+      (response: Themes) => {
+        console.log(response);
+        this.getThemes();
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
   }
+
+  show(i: Themes) {
+    var t = document.getElementById("hide") as HTMLElement;
+    t.style.display = "block";
+    var con = document.getElementById("main-container") as HTMLElement;
+    con.style.opacity = "0.3";
+    this.editTheme = i;
+  }
+
   close() {
-    this.displayStyle = "none";
-  }
-  onUpdateTheme() {
-    this.adminThemesService.updateTheme(this.themesUpdate).subscribe(data => {
-      console.log(data);
-    })
-  }
-
-  themesUpdate: any = {
-    themeId: "",
-    themeName: "",
-    themeImageURL: "",
-    themePhotographer: "",
-    themeVideographer: "",
-    themeReturnGift: "",
-    themeCost: "",
-
+    var t = document.getElementById("hide") as HTMLElement;
+    t.style.display = "none";
+    var con = document.getElementById("main-container") as HTMLElement;
+    con.style.opacity = "1";
   }
 
 }

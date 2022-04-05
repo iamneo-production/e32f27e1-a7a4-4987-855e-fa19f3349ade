@@ -15,6 +15,7 @@ export class AddmenuFormComponent implements OnInit {
   constructor(private adminFoodMenuService: AdminFoodmenuService, private route: Router) { }
 
   ngOnInit(): void {
+    
   }
 
   go() {

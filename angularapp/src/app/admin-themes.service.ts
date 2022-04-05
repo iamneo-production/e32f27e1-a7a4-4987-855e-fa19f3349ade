@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { Themes } from './themes';
 import { environment } from 'src/environments/environment';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -23,10 +22,11 @@ export class AdminThemesService {
   }
 
   public updateTheme(data: Themes): Observable<Themes> {
-    return this.http.put<Themes>(`${this.apiServerUrl}/editTheme`, data);
+    return this.http.put<Themes>(`${this.apiServerUrl}/editTheme/${data.themeId}`, data);
   }
 
   public deleteTheme(themeId: number): Observable<void> {
     return this.http.delete<void>(`${this.apiServerUrl}/deleteThemes/${themeId}`);
   }
+
 }

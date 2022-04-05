@@ -19,6 +19,15 @@ export class AdminFoodmenuComponent implements OnInit {
     this.getAllMenu();
   }
 
+  menuUpdate: Foodmenu = {
+    id: 0,
+    foodImageUrl: "",
+    foodMenuItems: "",
+    foodMenuType: "",
+    foodMenuCost: 0,
+
+  }
+
   public getAllMenu(): void {
     this.adminFoodmenuService.getAllMenu().subscribe(
       (response: Foodmenu[]) => {
@@ -38,26 +47,36 @@ export class AdminFoodmenuComponent implements OnInit {
       })
   }
 
-  displayStyle = "none";
-  openPopup(res: any) {
-    this.displayStyle = "block";
-    this.menuUpdate = res;
-  }
-  close() {
-    this.displayStyle = "none";
-  }
-  onUpdateMenu() {
-    this.adminFoodmenuService.updateMenu(this.menuUpdate).subscribe(data => {
-      console.log(data);
-    })
+  onUpdateMenu(menuUpdate: Foodmenu) {
+    var t = document.getElementById("hide") as HTMLElement;
+    t.style.display = "none";
+    var con = document.getElementById("main-container") as HTMLElement;
+    con.style.opacity = "1";
+    this.adminFoodmenuService.updateMenu(menuUpdate).subscribe(
+      (response: Foodmenu) => {
+        console.log(response);
+        this.getAllMenu();
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
   }
 
-  menuUpdate: any = {
-    id: "",
-    foodImageUrl: "",
-    foodMenuItems: "",
-    foodMenuType: "",
-    foodMenuCost: "",
+  show(menuUpdate: Foodmenu) {
+    var t = document.getElementById("hide") as HTMLElement;
+    t.style.display = "block";
+    var con = document.getElementById("main-container") as HTMLElement;
+    con.style.opacity = "0.3";
+    this.menuUpdate = menuUpdate;
+  }
+
+  close() {
+    var t = document.getElementById("hide") as HTMLElement;
+    t.style.display = "none";
+    var con = document.getElementById("main-container") as HTMLElement;
+    con.style.opacity = "1";
+
   }
 
 }

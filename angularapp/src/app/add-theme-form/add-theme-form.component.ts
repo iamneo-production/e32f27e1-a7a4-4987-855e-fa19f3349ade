@@ -11,9 +11,22 @@ import { Themes } from '../themes';
   styleUrls: ['./add-theme-form.component.css']
 })
 export class AddThemeFormComponent implements OnInit {
+  public theme: Themes[] = [];
   constructor(private adminThemesService: AdminThemesService, private route: Router) { }
   
   ngOnInit(): void {
+    this.getThemes();
+  }
+
+  public getThemes(): void {
+    this.adminThemesService.getThemes().subscribe(
+      (response: Themes[]) => {
+        this.theme = response;
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
   }
 
   go() {
@@ -21,6 +34,20 @@ export class AddThemeFormComponent implements OnInit {
   }
 
   public onAddTheme(addForm: NgForm): void {
+    let flag = 0;
+    this.theme.forEach((data) => {
+      if (addForm.value.themeName === data.themeName) {
+        window.alert("Theme Name already Exists");
+        flag = 1;
+        return;
+      }
+    });
+    if (flag === 1)
+      return;
+    this.addTheme(addForm);
+  }
+
+  public addTheme(addForm: NgForm): void {
     this.go();
     this.adminThemesService.addThemes(addForm.value).subscribe(
       (response: Themes) => { },
@@ -28,6 +55,5 @@ export class AddThemeFormComponent implements OnInit {
         alert(error.message);
       }
     );
-  }
-  
+  } 
 }

@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Foodmenu } from './foodmenu';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -24,7 +23,7 @@ export class AdminFoodmenuService {
   }
 
   public updateMenu(data: Foodmenu): Observable<Foodmenu> {
-    return this.http.put<Foodmenu>(`${this.apiServerUrl}/editMenu`, data);
+    return this.http.put<Foodmenu>(`${this.apiServerUrl}/editMenu/${data.id}`, data);
   }
 
   public deleteMenu(id: number): Observable<void> {

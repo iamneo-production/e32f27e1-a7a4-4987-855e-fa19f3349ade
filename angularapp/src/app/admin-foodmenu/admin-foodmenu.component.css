@@ -189,13 +189,101 @@
     bottom: 0;
   }
   
-  #addOnButton {
-    margin-left: 140px;
+  #main-container {
+    position: relative;
+  }
+  
+  #hide {
+    display: none;
+    position: absolute;
+    top: 35px;
+    left: 30%;
+    opacity: 1;
+    z-index: 999;
+  }
+  
+  label {
+    margin-left: 22px;
+    display: none;
+  }
+  
+  .edit-menu {
+    position: absolute;
+    left: 30%;
+    border-radius: 5px;
+    background-color: white;
+    padding: 30px;
+    margin-top: 4%;
+    box-shadow: 2px 2px gainsboro;
+    width: 500px;
+  }
+  
+  input[type=text] {
+    width: 90%;
+    padding: 12px 15px;
+    margin: 7px auto;
+    display: block;
+    border: 1px solid #ADADAD;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .btn {
     background-color: #F39237;
+    border: 0;
     color: white;
-    border-radius: 8px;
+    padding: 10px 20px;
     text-align: center;
     text-decoration: none;
+    display: inline-block;
     font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 30%;
+  }
+  
+  .btn1 {
+    background-color: burlywood;
+    border: 0;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  ::placeholder {
+    color: #587291;
+  }
+  
+  
+  #exit {
+    width: 5%;
+    float: left;
+    color: gray;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  #header {
+    margin-bottom: 40px;
+  }
+  
+  form {
+    border-top: 1px solid gainsboro;
+    padding-top: 8px;
+  }
+  
+  #header p {
+    float: left;
+    width: 95%;
+    font-size: 20px;
   }
   
