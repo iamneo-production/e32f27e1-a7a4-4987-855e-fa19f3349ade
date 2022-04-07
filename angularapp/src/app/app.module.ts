@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 import { SignupComponent } from './signup/signup.component';
 import { FormComponent } from './signup/form/form.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,6 +17,8 @@ import { UserEventComponent } from './user-event/user-event.component';
 import { AdminAddonsComponent } from './admin-addons/admin-addons.component';
 import { AdminAddAddonsComponent } from './admin-addons/admin-add-addons/admin-add-addons.component';
 import { AboutComponent } from './about/about.component';
+import { ConfirmEqualValidatorDirective } from './shared/confirm-equal-validator.directive';
+
 
 @NgModule({
   declarations: [
@@ -41,6 +42,11 @@ import { AboutComponent } from './about/about.component';
     FormsModule,
     MatSnackBarModule,
     ReactiveFormsModule,
+    ConfirmEqualValidatorDirective
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
